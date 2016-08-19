@@ -1,0 +1,14 @@
+<div ng-controller="PersonFormCtrl">
+    <ul ng-repeat="entry in form.getPerson()">
+        <li><label>Name</label><input type="text" ng-model="entry.name" /></li>
+        <li><label>Vorname</label><input type="text" ng-model="entry.firstname" /></li>
+        <li><label>Geburtsdatum</label><input type="text" ng-model="entry.birthdate" placeholder="JJJJ-MM-TT" /></li>
+        <li><label>Geschlecht</label><input type="text" ng-model="entry.gender" /></li>
+        <li><label>Anschrift</label><input type="text" ng-model="entry.address" /></li>
+        <li><label>PLZ</label><input type="text" ng-model="entry.zip" /></li>
+        <li><label>Ort</label><input type="text" ng-model="entry.city" /></li>
+        <li><label>Aktion</label><button ng-click="save(entry);"><span class="fa fa-floppy-o"></span></button>
+        </li>
+    </ul>
+    <button ng-click="form.reset();">Neu</button>
+</div>

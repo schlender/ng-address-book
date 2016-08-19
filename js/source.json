@@ -1,0 +1,32 @@
+{
+    "0": {
+        "id": "1",
+        "name": "Schlender",
+        "firstname": "Mike",
+        "address": "Hinter der M\u00fchle 69",
+        "zip": "99095",
+        "city": "Erfurt OT Stotternheim",
+        "birthdate": "2014-07-07",
+        "gender": "m"
+    },
+    "2": {
+        "id": "3",
+        "name": "Schlender",
+        "firstname": "Raphaels",
+        "address": "Hinter der M\u00fchle 69",
+        "zip": "99095",
+        "city": "Erfurt OT Stotternheim",
+        "birthdate": "2014-07-07",
+        "gender": "m"
+    },
+    "3": {
+        "id": "2",
+        "name": "Schlender",
+        "firstname": "Nicole",
+        "address": "Roggersdorfer Str. 8",
+        "zip": "83607",
+        "city": "Holzkirchen",
+        "birthdate": "1979-05-26",
+        "gender": "f"
+    }
+}

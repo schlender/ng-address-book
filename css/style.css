@@ -1,0 +1,65 @@
+body {
+    font: 0.85vw/1.45rem Verdana, Arial, Geneva, Tahoma, "sans-serif";
+}
+*[contenteditable=true] {
+    border: 1px solid #999;
+}
+ul {
+    list-style: none;
+}
+li label {
+    display: inline-block;
+    min-width: 10rem;
+    margin-right: 0.5rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+thead {
+    border-bottom: 1px solid lightblue;
+}
+th,
+td {
+    padding: 0.25em 0.5em;
+}
+
+/* enter = add start */
+.booklist tr.ng-enter {
+    -webkit-transition:0.5s linear all;
+    transition:0.5s linear all;
+    background-color: green;
+}
+/* enter-active = add finished */
+.booklist tr.ng-enter-active {
+    background-color: white;
+}
+
+/* leave = remove start */
+.booklist tr.ng-leave {
+    -webkit-transition:0.5s linear all;
+    transition:0.5s linear all;
+    background-color: red;
+}
+/* leave-active = remove finished */
+.booklist tr.ng-leave-active {
+    background-color: grey;
+}
+/* leave = remove start */
+.booklist tr.ng-move {
+    -webkit-transition:0.5s linear all;
+    transition:0.5s linear all;
+    background-color: red;
+}
+/* leave-active = remove finished */
+.booklist tr.ng-move-active {
+    background-color: grey;
+}
+ 
+.booklist tr:hover,
+.booklist tr:focus {
+    -webkit-transition:0.5s linear all;
+    transition:0.5s linear all;
+    background-color: lightblue;
+}

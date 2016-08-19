@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+
+    <head>
+        <title>NG Addressbook</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/font-awesome-4.6.3/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+
+        <div ng-app="addressbook">
+            <table ng-controller="BookCtrl" class="booklist">
+                <thead>
+                    <tr>
+                        <th>KD-Nr.</th>
+                        <th>Name</th>
+                        <th>Vorname</th>
+                        <th>Geburtsdatum</th>
+                        <th>Geschlecht</th>
+                        <th>Anschrift</th>
+                        <th>PLZ</th>
+                        <th>Ort</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-show="book.sumOfEntries" ng-repeat="entry in book.getEntries() | orderBy:['zip', 'address']">
+                        <td ng-bind="entry.id"></td>
+                        <td ng-bind="entry.name"></td>
+                        <td ng-bind="entry.firstname"></td>
+                        <td ng-bind="book.getDate(entry.birthdate) | date:'dd.MM.yyyy'"></td>
+                        <td ng-bind="entry.gender"></td>
+                        <td ng-bind="entry.address"></td>
+                        <td ng-bind="entry.zip"></td>
+                        <td ng-bind="entry.city"></td>
+                        <td>
+                            <button ng-click="edit(entry)"><span class="fa fa-edit"></span></button>
+                            <button ng-click="copy(entry)"><span class="fa fa-copy"></span></button>
+                            <button ng-click="del(entry);"><span class="fa fa-trash"></span></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div ng-controller="PersonFormCtrl">
+                <ul ng-repeat="entry in form.getPerson()">
+                    <li><label>KD-Nr.</label><input type="text" ng-model="entry.id" readonly="readonly"/></li>
+                    <li><label>Name</label><input type="text" ng-model="entry.name" /></li>
+                    <li><label>Vorname</label><input type="text" ng-model="entry.firstname" /></li>
+                    <li><label>Geburtsdatum</label><input type="text" ng-model="entry.birthdate" placeholder="JJJJ-MM-TT" /></li>
+                    <li><label>Geschlecht</label><input type="text" ng-model="entry.gender" /></li>
+                    <li><label>Anschrift</label><input type="text" ng-model="entry.address" /></li>
+                    <li><label>PLZ</label><input type="text" ng-model="entry.zip" /></li>
+                    <li><label>Ort</label><input type="text" ng-model="entry.city" /></li>
+                    <li><label>&nbsp;</label><button ng-click="save(entry);"><span class="fa fa-floppy-o"></span> Speichern</button>
+                    </li>
+                </ul>
+                <button ng-click="form.reset();">Neu</button>
+            </div>
+        </div>
+        <div id="transfer-feedback"></div>
+        <script src="js/angular.min.js"></script>
+        <script src="js/angular-animate.js"></script>
+        <script src="js/ng-app.js"> </script>
+    </body>
+
+</html>
